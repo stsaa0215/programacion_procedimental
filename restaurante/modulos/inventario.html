@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Inventario</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" />
+</head>
+<body class="has-background-black" style="min-height: 100vh;">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="../index.html"> Chechos Food </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="../index.html"> Home </a>
+          <a class="navbar-item"> Documentation </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> More </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item"> About </a>
+              <a class="navbar-item"> Jobs </a>
+              <a class="navbar-item"> Contact </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item"> Report an issue </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="box" style="max-width: 650px; margin: 0 auto; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <h1 class="title has-text-centered is-3 mb-5">Registro de Inventario</h1>
+
+                <form>
+                    <div class="columns">
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Código del producto</label>
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="Ingresa código del producto">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Nombre del producto</label>
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="Ingresa nombre del producto">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="columns">
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Cantidad</label>
+                                <div class="control">
+                                    <input class="input" type="number" placeholder="Ingresa cantidad" min="0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Marca</label>
+                                <div class="control">
+                                    <input class="input" type="text" placeholder="Ingresa marca del producto">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field mt-5">
+                        <div class="control">
+                            <button class="button is-link is-fullwidth is-medium">Registrar Producto</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
