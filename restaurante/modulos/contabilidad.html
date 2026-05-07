@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+    <title>Chechos Food - Contabilidad</title>
+  </head>
+  <body class="has-background-black" style="min-height: 100vh;">
+    
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="../index.html"> Chechos Food </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="../index.html"> Home </a>
+          <a class="navbar-item"> Documentation </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> More </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item"> About </a>
+              <a class="navbar-item"> Jobs </a>
+              <a class="navbar-item"> Contact </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item"> Report an issue </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        
+        <div class="columns">
+          
+          <!-- Parte Izquierda: Tabla de Contabilidad -->
+          <div class="column is-8">
+            <div class="box" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); height: 100%;">
+              <h1 class="title is-3 mb-2">Contabilidad</h1>
+              <p class="subtitle mb-5">Registro de movimientos financieros</p>
+              
+              <div class="table-container">
+                <table class="table is-fullwidth is-striped is-hoverable">
+                  <thead>
+                    <tr>
+                      <th>Ventas</th>
+                      <th>Fechas</th>
+                      <th>Ingresos</th>
+                      <th>Egresos</th>
+                      <th>Concepto</th>
+                      <th>Valor</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>V-001</td>
+                      <td>2024-05-07</td>
+                      <td class="has-text-success">+$150,000</td>
+                      <td>-</td>
+                      <td>Venta de Picada Mix</td>
+                      <td>$150,000</td>
+                    </tr>
+                    <tr>
+                      <td>-</td>
+                      <td>2024-05-06</td>
+                      <td>-</td>
+                      <td class="has-text-danger">-$50,000</td>
+                      <td>Compra de tomates</td>
+                      <td>$50,000</td>
+                    </tr>
+                    <tr>
+                      <td>V-002</td>
+                      <td>2024-05-06</td>
+                      <td class="has-text-success">+$85,000</td>
+                      <td>-</td>
+                      <td>Venta Carne de cerdo</td>
+                      <td>$85,000</td>
+                    </tr>
+                    <tr>
+                      <td>-</td>
+                      <td>2024-05-05</td>
+                      <td>-</td>
+                      <td class="has-text-danger">-$120,000</td>
+                      <td>Pago de servicios públicos</td>
+                      <td>$120,000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+              <div class="field mt-5">
+                <div class="control">
+                   <button class="button is-link is-medium">Añadir Registro</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Parte Derecha: Datos de Usuario -->
+          <div class="column is-4">
+            <div class="box has-text-centered" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); height: 100%;">
+              <h2 class="title is-4 mb-5">Perfil del Usuario</h2>
+              
+              <figure class="image is-128x128 is-inline-block mb-4">
+                <img class="is-rounded" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Foto de perfil">
+              </figure>
+              
+              <h3 class="title is-3" id="displayNombre">Juan Pérez</h3>
+              <p class="subtitle is-5" id="displayCargo">Administrador</p>
+              
+              <hr>
+              
+              <div class="content has-text-left">
+                <p><strong>Cédula:</strong> <span id="displayDocumento">123456789</span></p>
+                <p><strong>Teléfono:</strong> <span id="displayTelefono">3001234567</span></p>
+                <p><strong>Correo:</strong> <span id="displayCorreo">juan.perez@chechosfood.com</span></p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Intenta recuperar los datos guardados desde usuario.html
+      // Si usuario.html guarda los datos en localStorage, se pueden mostrar aquí.
+      document.addEventListener('DOMContentLoaded', () => {
+        const nombre = localStorage.getItem('usuario_nombre');
+        const apellido = localStorage.getItem('usuario_apellido');
+        const cargo = localStorage.getItem('usuario_cargo');
+        const documento = localStorage.getItem('usuario_documento');
+        const telefono = localStorage.getItem('usuario_telefono');
+        const correo = localStorage.getItem('usuario_correo');
+
+        if(nombre && apellido) {
+          document.getElementById('displayNombre').textContent = `${nombre} ${apellido}`;
+        }
+        if(cargo) {
+          document.getElementById('displayCargo').textContent = cargo;
+        }
+        if(documento) {
+          document.getElementById('displayDocumento').textContent = documento;
+        }
+        if(telefono) {
+          document.getElementById('displayTelefono').textContent = telefono;
+        }
+        if(correo) {
+          document.getElementById('displayCorreo').textContent = correo;
+        }
+      });
+    </script>
+  </body>
+</html>
