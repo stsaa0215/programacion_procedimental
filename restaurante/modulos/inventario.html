@@ -7,101 +7,104 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
     />
-    <title>Inventario - Restaurante</title>
+    <title>Chechos Food</title>
   </head>
-  <body>
+  <body class="has-background-black" style="min-height: 100vh;">
     
-    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="../index.html">
-          <strong>Restaurante De juanjo</strong>
-        </a>
+        <a class="navbar-item" href="../index.html"> Chechos Food </a>
       </div>
+
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href="../index.html"> Inicio </a>
-          <a class="navbar-item is-active" href="inventario.html"> Inventario </a>
+          <a class="navbar-item" href="../index.html"> Home </a>
+          <a class="navbar-item"> Documentation </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> More </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item"> About </a>
+              <a class="navbar-item"> Jobs </a>
+              <a class="navbar-item"> Contact </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item"> Report an issue </a>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
 
-   
     <section class="section">
       <div class="container">
-        <h1 class="title">Registro de Inventario</h1>
-        <p class="subtitle">Ingresa los datos del nuevo producto</p>
+        <div class="box" style="max-width: 800px; margin: 0 auto; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+          <h1 class="title has-text-centered is-3 mb-2">Chechos Food</h1>
+          <p class="subtitle has-text-centered mb-5">Ingresa los datos del nuevo producto</p>
 
-        <div class="columns is-centered">
-          <div class="column is-half">
-            <div class="box">
-              <form id="inventarioForm">
-                
-                <div class="field">
-                  <label class="label">Código del producto</label>
-                  <div class="control">
-                    <input class="input" type="text" id="codigo" placeholder="Ej. P001" required>
-                  </div>
-                </div>
-
-                <div class="field">
-                  <label class="label">Nombre del producto</label>
-                  <div class="control">
-                    <input class="input" type="text" id="nombre" placeholder="Ej. Tomates" required>
-                  </div>
-                </div>
-
-                <div class="field">
-                  <label class="label">Cantidad</label>
-                  <div class="control">
-                    <input class="input" type="number" id="cantidad" placeholder="Ej. 50" min="0" required>
-                  </div>
-                </div>
-
-                <div class="field">
-                  <label class="label">Marca</label>
-                  <div class="control">
-                    <input class="input" type="text" id="marca" placeholder="Ej. Fruco" required>
-                  </div>
-                </div>
-
-                <div class="field is-grouped mt-5">
-                  <div class="control">
-                    <button type="submit" class="button is-primary">Registrar Producto</button>
-                  </div>
-                  <div class="control">
-                    <button type="reset" class="button is-light">Limpiar</button>
-                  </div>
-                </div>
-
-              </form>
+          <form id="inventarioForm">
+            
+            <div class="field">
+              <label class="label">Código del producto</label>
+              <div class="control">
+                <input class="input" type="text" id="codigo" placeholder="Ej. P001" required>
+              </div>
             </div>
+
+            <div class="field">
+              <label class="label">Nombre del producto</label>
+              <div class="control">
+                <input class="input" type="text" id="nombre" placeholder="Ej. Tomates" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Cantidad</label>
+              <div class="control">
+                <input class="input" type="number" id="cantidad" placeholder="Ej. 50" min="0" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Marca</label>
+              <div class="control">
+                <input class="input" type="text" id="marca" placeholder="Ej. Fruco" required>
+              </div>
+            </div>
+
+            <div class="field mt-5">
+              <div class="control">
+                <button type="submit" class="button is-link is-fullwidth is-medium">Registrar Producto</button>
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <button type="reset" class="button is-light is-fullwidth">Limpiar</button>
+              </div>
+            </div>
+
+          </form>
+
+          <hr>
+
+          <h2 class="title is-4 has-text-centered">Productos Registrados</h2>
+          <div class="table-container">
+            <table class="table is-fullwidth is-striped is-hoverable">
+              <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>Nombre</th>
+                  <th>Cantidad</th>
+                  <th>Marca</th>
+                </tr>
+              </thead>
+              <tbody id="tablaInventario">
+                
+              </tbody>
+            </table>
           </div>
         </div>
-
-        <hr>
-
-        
-        <h2 class="title is-4">Productos Registrados</h2>
-        <div class="table-container">
-          <table class="table is-fullwidth is-striped is-hoverable">
-            <thead>
-              <tr>
-                <th>Código</th>
-                <th>Nombre</th>
-                <th>Cantidad</th>
-                <th>Marca</th>
-              </tr>
-            </thead>
-            <tbody id="tablaInventario">
-              
-            </tbody>
-          </table>
-        </div>
-
       </div>
     </section>
 
-   
     <script>
       document.getElementById('inventarioForm').addEventListener('submit', function(e) {
         e.preventDefault();
