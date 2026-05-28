@@ -45,21 +45,21 @@
             <div class="field">
               <label class="label">Nombre del usuario</label>
               <div class="control">
-                <input class="input" type="text" id="nombreUsuario" placeholder="Ej. Juan Pérez" required>
+                <input class="input" type="text" id="Nombre del usuario" placeholder="Ej. Juan Pérez" required>
               </div>
             </div>
 
             <div class="field">
               <label class="label">Teléfono</label>
               <div class="control">
-                <input class="input" type="tel" id="telefono" placeholder="Ej. 3001234567" required>
+                <input class="input" type="tel" id="Teléfono" placeholder="Ej. 3001234567" required>
               </div>
             </div>
 
             <div class="field">
               <label class="label">Dirección</label>
               <div class="control">
-                <input class="input" type="text" id="direccion" placeholder="Ej. Calle 123 # 45-67" required>
+                <input class="input" type="text" id="Dirección" placeholder="Ej. Calle 123 # 45-67" required>
               </div>
             </div>
 
@@ -67,7 +67,7 @@
               <label class="label">Producto</label>
               <div class="control">
                 <div class="select is-fullwidth">
-                  <select id="producto" required>
+                  <select id="Producto" required>
                     <option value="" disabled selected>Seleccione un producto</option>
                     <option value="Chorizo Santarrosano">Chorizo Santarrosano</option>
                     <option value="Chunchulla">Chunchulla</option>
@@ -81,7 +81,7 @@
             <div class="field">
               <label class="label">Cantidad</label>
               <div class="control">
-                <input class="input" type="number" id="cantidad" placeholder="Ej. 2" min="1" required>
+                <input class="input" type="number" id="Cantidad" placeholder="Ej. 2" min="1" required>
               </div>
             </div>
 
@@ -89,7 +89,7 @@
               <label class="label">Método de pago</label>
               <div class="control">
                 <div class="select is-fullwidth">
-                  <select id="metodoPago" required>
+                  <select id="Método de pago" required>
                     <option value="" disabled selected>Seleccione un método de pago</option>
                     <option value="Efectivo">Efectivo</option>
                     <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
@@ -141,12 +141,12 @@
       document.getElementById('pedidosForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const nombreUsuario = document.getElementById('nombreUsuario').value;
-        const telefono = document.getElementById('telefono').value;
-        const direccion = document.getElementById('direccion').value;
-        const producto = document.getElementById('producto').value;
-        const cantidad = document.getElementById('cantidad').value;
-        const metodoPago = document.getElementById('metodoPago').value;
+        const nombreUsuario = document.getElementById('Nombre del usuario').value;
+        const telefono = document.getElementById('Teléfono').value;
+        const direccion = document.getElementById('Dirección').value;
+        const producto = document.getElementById('Producto').value;
+        const cantidad = document.getElementById('Cantidad').value;
+        const metodoPago = document.getElementById('Método de pago').value;
         
         const tbody = document.getElementById('tablaPedidos');
         const nuevaFila = document.createElement('tr');

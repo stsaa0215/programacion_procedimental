@@ -1,0 +1,1 @@
+let filtroContabilidad = document.getElementById("filtroContabilidad").value;
