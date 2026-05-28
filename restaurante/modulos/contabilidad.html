@@ -9,8 +9,7 @@
     />
     <title>Chechos Food - Contabilidad</title>
   </head>
-  <body class="has-background-black" style="min-height: 100vh;">
-    
+  <body class="has-background-black" style="min-height: 100vh">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="../index.html"> Chechos Food </a>
@@ -36,15 +35,26 @@
 
     <section class="section">
       <div class="container">
-        
         <div class="columns">
-          
-         
           <div class="column is-8">
-            <div class="box" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); height: 100%;">
+            <div
+              class="box"
+              style="
+                border-radius: 12px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+                height: 100%;
+              "
+            >
               <h1 class="title is-3 mb-2">Contabilidad</h1>
               <p class="subtitle mb-5">Registro de movimientos financieros</p>
-              
+
+              <div class="field mb-4">
+                <label class="label">Filtrar registros</label>
+                <div class="control">
+                  <input class="input" id="Filtrar registros" type="text" placeholder="Buscar por concepto o venta... />
+                </div>
+              </div>
+
               <div class="table-container">
                 <table class="table is-fullwidth is-striped is-hoverable">
                   <thead>
@@ -93,67 +103,85 @@
                   </tbody>
                 </table>
               </div>
-              
+
               <div class="field mt-5">
                 <div class="control">
-                   <button class="button is-link is-medium">Añadir Registro</button>
+                  <button class="button is-link is-medium">
+                    Añadir Registro
+                  </button>
                 </div>
               </div>
-
             </div>
           </div>
 
-          
           <div class="column is-4">
-            <div class="box has-text-centered" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); height: 100%;">
+            <div
+              class="box has-text-centered"
+              style="
+                border-radius: 12px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+                height: 100%;
+              "
+            >
               <h2 class="title is-4 mb-5">Perfil del Usuario</h2>
-              
+
               <figure class="image is-128x128 is-inline-block mb-4">
-                <img class="is-rounded" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Foto de perfil">
+                <img
+                  class="is-rounded"
+                  src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                  alt="Foto de perfil"
+                />
               </figure>
-              
+
               <h3 class="title is-3" id="displayNombre">Juan Pérez</h3>
               <p class="subtitle is-5" id="displayCargo">Administrador</p>
-              
-              <hr>
-              
-              <div class="content has-text-left">
-                <p><strong>Cédula:</strong> <span id="displayDocumento">123456789</span></p>
-                <p><strong>Teléfono:</strong> <span id="displayTelefono">3001234567</span></p>
-                <p><strong>Correo:</strong> <span id="displayCorreo">juan.perez@chechosfood.com</span></p>
-              </div>
 
+              <hr />
+
+              <div class="content has-text-left">
+                <p>
+                  <strong>Cédula:</strong>
+                  <span id="displayDocumento">123456789</span>
+                </p>
+                <p>
+                  <strong>Teléfono:</strong>
+                  <span id="displayTelefono">3001234567</span>
+                </p>
+                <p>
+                  <strong>Correo:</strong>
+                  <span id="displayCorreo">juan.perez@chechosfood.com</span>
+                </p>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
     <script>
-     
-      document.addEventListener('DOMContentLoaded', () => {
-        const nombre = localStorage.getItem('usuario_nombre');
-        const apellido = localStorage.getItem('usuario_apellido');
-        const cargo = localStorage.getItem('usuario_cargo');
-        const documento = localStorage.getItem('usuario_documento');
-        const telefono = localStorage.getItem('usuario_telefono');
-        const correo = localStorage.getItem('usuario_correo');
+      document.addEventListener("DOMContentLoaded", () => {
+        const nombre = localStorage.getItem("usuario_nombre");
+        const apellido = localStorage.getItem("usuario_apellido");
+        const cargo = localStorage.getItem("usuario_cargo");
+        const documento = localStorage.getItem("usuario_documento");
+        const telefono = localStorage.getItem("usuario_telefono");
+        const correo = localStorage.getItem("usuario_correo");
 
-        if(nombre && apellido) {
-          document.getElementById('displayNombre').textContent = `${nombre} ${apellido}`;
+        if (nombre && apellido) {
+          document.getElementById("displayNombre").textContent =
+            `${nombre} ${apellido}`;
         }
-        if(cargo) {
-          document.getElementById('displayCargo').textContent = cargo;
+        if (cargo) {
+          document.getElementById("displayCargo").textContent = cargo;
         }
-        if(documento) {
-          document.getElementById('displayDocumento').textContent = documento;
+        if (documento) {
+          document.getElementById("displayDocumento").textContent = documento;
         }
-        if(telefono) {
-          document.getElementById('displayTelefono').textContent = telefono;
+        if (telefono) {
+          document.getElementById("displayTelefono").textContent = telefono;
         }
-        if(correo) {
-          document.getElementById('displayCorreo').textContent = correo;
+        if (correo) {
+          document.getElementById("displayCorreo").textContent = correo;
         }
       });
     </script>
