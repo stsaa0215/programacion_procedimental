@@ -48,7 +48,7 @@
             Registro de Usuarios
           </h1>
 
-          <form>
+          <form id="registroUsuario">
             <div class="columns">
               <div class="column">
                 <div class="field">
@@ -200,5 +200,24 @@
         </div>
       </div>
     </section>
+    <script>
+      document.getElementById("registroUsuario").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const nombreVal = document.getElementById("nombre").value;
+        const apellidoVal = document.getElementById("apellido").value;
+        const numeroDocumentoVal = document.getElementById("numeroDocumento").value;
+        const telefonoVal = document.getElementById("telefono").value;
+        const correoVal = document.getElementById("correo").value;
+
+        validarDatos(
+          nombreVal,
+          apellidoVal,
+          numeroDocumentoVal,
+          telefonoVal,
+          correoVal
+        );
+      });
+    </script>
+    <script src="../../js/usuario.js"></script>
   </body>
 </html>

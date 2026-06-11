@@ -3,12 +3,8 @@ let apellido = document.getElementById("apellido").value;
 let numeroDocumento = document.getElementById("numeroDocumento").value;
 let telefono = document.getElementById("telefono").value;
 let correo = document.getElementById("correo").value;
-let generoMasculino = document.querySelector(
-  'input[name="generoMasculino"]:checked',
-).value;
-let generoFemenino = document.querySelector(
-  'input[name="generoFemenino"]:checked',
-).value;
+let generoMasculino = document.querySelector('input[name="g"]#generoMasculino')?.checked || false;
+let generoFemenino = document.querySelector('input[name="g"]#generoFemenino')?.checked || false;
 let fechaNacimiento = document.getElementById("fechaNacimiento").value;
 let cargo = document.getElementById("cargo").value;
 let contrasena = document.getElementById("contrasena").value;
