@@ -51,7 +51,7 @@
               <div class="field mb-4">
                 <label class="label">Filtrar registros</label>
                 <div class="control">
-                  <input class="input" id="Filtrar registros" type="text" placeholder="Buscar por concepto o venta... />
+                  <input class="input" id="filtroContabilidad" type="text" placeholder="Buscar por concepto o venta..." />
                 </div>
               </div>
 
@@ -104,13 +104,104 @@
                 </table>
               </div>
 
-              <div class="field mt-5">
-                <div class="control">
-                  <button class="button is-link is-medium">
-                    Añadir Registro
-                  </button>
+              <hr />
+
+              <form id="registroFinanciero" class="mt-5">
+                <h3 class="title is-4 mb-4">Añadir Registro</h3>
+                <div class="columns">
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Ventas</label>
+                      <div class="control">
+                        <input
+                          class="input"
+                          type="text"
+                          placeholder="Ej. V-003"
+                          id="ventas"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Fechas</label>
+                      <div class="control">
+                        <input
+                          class="input"
+                          type="date"
+                          id="fechas"
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+
+                <div class="columns">
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Ingresos</label>
+                      <div class="control">
+                        <input
+                          class="input"
+                          type="text"
+                          placeholder="Ej. 150000"
+                          id="ingresos"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Egresos</label>
+                      <div class="control">
+                        <input
+                          class="input"
+                          type="text"
+                          placeholder="Ej. 50000"
+                          id="egresos"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="columns">
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Concepto</label>
+                      <div class="control">
+                        <input
+                          class="input"
+                          type="text"
+                          placeholder="Ej. Compra de insumos"
+                          id="concepto"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Valor</label>
+                      <div class="control">
+                        <input
+                          class="input"
+                          type="text"
+                          placeholder="Ej. 100000"
+                          id="valor"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="field mt-5">
+                  <div class="control">
+                    <button class="button is-link is-fullwidth is-medium" type="submit">
+                      Añadir Registro
+                    </button>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
 
@@ -185,5 +276,6 @@
         }
       });
     </script>
+    <script src="../../js/contabilidad.js"></script>
   </body>
 </html>
