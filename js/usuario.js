@@ -17,30 +17,58 @@ function validarDatos(nombre, apellido, numeroDocumento, telefono, correo) {
     telefono === "" ||
     correo === ""
   ) {
-    console.log("Los datos son Incorrectos");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Todos los campos son obligatorios y no pueden estar vacíos."
+    });
   } else {
-    if (!/^[a-zA-Z]+$/.test(nombre)) {
-      console.log("Los datos son Incorrectos");
+    if (!/^[a-zA-Z]+$/(nombre)) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "El nombre solo debe contener letras."
+      });
     }
 
-    if (!/^[a-zA-Z]+$/.test(apellido)) {
-      console.log("Los datos son Incorrectos");
+    if (!/^[a-zA-Z]+$/(apellido)) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "El apellido solo debe contener letras."
+      });
     }
 
     if (isNaN(numeroDocumento)) {
-      console.log("Los datos son Incorrectos");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "El número de documento debe ser un número válido."
+      });
     }
 
     if (isNaN(telefono)) {
-      console.log("Los datos son Incorrectos");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "El teléfono debe ser un número válido."
+      });
     }
 
     if (telefono.length > 10) {
-      console.log("Los datos son Incorrectos");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "El teléfono no puede tener más de 10 dígitos."
+      });
     }
 
     if (!correo.includes("@")) {
-      console.log("Los datos son Incorrectos");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "El correo electrónico no es válido (debe incluir '@')."
+      });
     }
   }
 }

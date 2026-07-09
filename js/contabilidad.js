@@ -15,22 +15,42 @@ function validarDatos(ventas, fechas, ingresos, egresos, concepto, valor) {
     concepto === "" ||
     valor === ""
   ) {
-    console.log("Los datos son Incorrectos");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Todos los campos son obligatorios y no pueden estar vacíos."
+    });
   } else {
     if (isNaN(ingresos)) {
-      console.log("Los datos son Incorrectos");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "El valor de los ingresos debe ser un número válido."
+      });
     }
 
     if (isNaN(egresos)) {
-      console.log("Los datos son Incorrectos");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "El valor de los egresos debe ser un número válido."
+      });
     }
 
     if (isNaN(valor)) {
-      console.log("Los datos son Incorrectos");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "El valor total debe ser un número válido."
+      });
     }
 
     if (!/^[a-zA-Z\s]+$/.test(concepto)) {
-      console.log("Los datos son Incorrectos");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "El concepto solo debe contener letras y espacios."
+      });
     }
   }
 }
