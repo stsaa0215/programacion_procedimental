@@ -40,26 +40,26 @@
           <h1 class="title has-text-centered is-3 mb-2">Pedidos</h1>
           <p class="subtitle has-text-centered mb-5">Ingresa los datos del nuevo pedido</p>
 
-          <form id="pedidosForm">
+          <form id="guardarpedido">
             
             <div class="field">
               <label class="label">Nombre del usuario</label>
               <div class="control">
-                <input class="input" type="text" id="Nombre del usuario" placeholder="Ej. Juan Pérez" required>
+                <input class="input" type="text" id="nombreUsuario" placeholder="Ej. Juan Pérez">
               </div>
             </div>
 
             <div class="field">
               <label class="label">Teléfono</label>
               <div class="control">
-                <input class="input" type="tel" id="Teléfono" placeholder="Ej. 3001234567" required>
+                <input class="input" type="tel" id="telefono" placeholder="Ej. 3001234567">
               </div>
             </div>
 
             <div class="field">
               <label class="label">Dirección</label>
               <div class="control">
-                <input class="input" type="text" id="Dirección" placeholder="Ej. Calle 123 # 45-67" required>
+                <input class="input" type="text" id="direccion" placeholder="Ej. Calle 123 # 45-67">
               </div>
             </div>
 
@@ -67,7 +67,7 @@
               <label class="label">Producto</label>
               <div class="control">
                 <div class="select is-fullwidth">
-                  <select id="Producto" required>
+                  <select id="Producto">
                     <option value="" disabled selected>Seleccione un producto</option>
                     <option value="Chorizo Santarrosano">Chorizo Santarrosano</option>
                     <option value="Chunchulla">Chunchulla</option>
@@ -81,7 +81,7 @@
             <div class="field">
               <label class="label">Cantidad</label>
               <div class="control">
-                <input class="input" type="number" id="Cantidad" placeholder="Ej. 2" min="1" required>
+                <input class="input" type="number" id="cantidad" placeholder="Ej. 2" min="1">
               </div>
             </div>
 
@@ -89,7 +89,7 @@
               <label class="label">Método de pago</label>
               <div class="control">
                 <div class="select is-fullwidth">
-                  <select id="Método de pago" required>
+                  <select id="Método de pago">
                     <option value="" disabled selected>Seleccione un método de pago</option>
                     <option value="Efectivo">Efectivo</option>
                     <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
@@ -138,14 +138,14 @@
     </section>
 
     <script>
-      document.getElementById('pedidosForm').addEventListener('submit', function(e) {
+      document.getElementById('guardarpedido').addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const nombreUsuario = document.getElementById('Nombre del usuario').value;
-        const telefono = document.getElementById('Teléfono').value;
-        const direccion = document.getElementById('Dirección').value;
+        const nombreUsuario = document.getElementById('nombreUsuario').value;
+        const telefono = document.getElementById('telefono').value;
+        const direccion = document.getElementById('direccion').value;
         const producto = document.getElementById('Producto').value;
-        const cantidad = document.getElementById('Cantidad').value;
+        const cantidad = document.getElementById('cantidad').value;
         const metodoPago = document.getElementById('Método de pago').value;
         
         const tbody = document.getElementById('tablaPedidos');
@@ -162,10 +162,12 @@
         
         tbody.appendChild(nuevaFila);
        
-        document.getElementById('pedidosForm').reset();
+        document.getElementById('guardarpedido').reset();
         
         document.getElementById('nombreUsuario').focus();
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../../js/pedidos.js"></script>
   </body>
 </html>

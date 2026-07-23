@@ -1,3 +1,4 @@
+function validarDatos (){
 let filtroContabilidad = document.getElementById("filtroContabilidad").value;
 let ventas = document.getElementById("ventas").value;
 let fechas = document.getElementById("fechas").value;
@@ -6,7 +7,7 @@ let egresos = document.getElementById("egresos").value;
 let concepto = document.getElementById("concepto").value;
 let valor = document.getElementById("valor").value;
 
-function validarDatos(ventas, fechas, ingresos, egresos, concepto, valor) {
+
   if (
     ventas === "" ||
     fechas === "" ||
@@ -20,29 +21,33 @@ function validarDatos(ventas, fechas, ingresos, egresos, concepto, valor) {
       title: "Oops...",
       text: "Todos los campos son obligatorios y no pueden estar vacíos."
     });
+    return;
   } else {
-    if (isNaN(ingresos)) {
+    if (!/^\d+(\.\d+)?$/.test(ingresos)) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "El valor de los ingresos debe ser un número válido."
       });
+      return;
     }
 
-    if (isNaN(egresos)) {
+    if (!/^\d+(\.\d+)?$/.test(egresos)) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "El valor de los egresos debe ser un número válido."
       });
+      return;
     }
 
-    if (isNaN(valor)) {
+    if (!/^\d+(\.\d+)?$/.test(valor)) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "El valor total debe ser un número válido."
       });
+      return;
     }
 
     if (!/^[a-zA-Z\s]+$/.test(concepto)) {
@@ -51,6 +56,12 @@ function validarDatos(ventas, fechas, ingresos, egresos, concepto, valor) {
         title: "Oops...",
         text: "El concepto solo debe contener letras y espacios."
       });
+      return;
     }
   }
 }
+
+document.getElementById("guardarcontabilidad").addEventListener("submit", (e) => {
+    e.preventDefault();
+    validarDatos();
+});

@@ -1,3 +1,5 @@
+function validarDatos() {
+  
 let nombre = document.getElementById("nombre").value;
 let apellido = document.getElementById("apellido").value;
 let numeroDocumento = document.getElementById("numeroDocumento").value;
@@ -8,8 +10,7 @@ let generoFemenino = document.querySelector('input[name="g"]#generoFemenino')?.c
 let fechaNacimiento = document.getElementById("fechaNacimiento").value;
 let cargo = document.getElementById("cargo").value;
 let contrasena = document.getElementById("contrasena").value;
-
-function validarDatos(nombre, apellido, numeroDocumento, telefono, correo) {
+ 
   if (
     nombre === "" ||
     apellido === "" ||
@@ -22,37 +23,42 @@ function validarDatos(nombre, apellido, numeroDocumento, telefono, correo) {
       title: "Oops...",
       text: "Todos los campos son obligatorios y no pueden estar vacíos."
     });
+    return;
   } else {
-    if (!/^[a-zA-Z]+$/(nombre)) {
+    if (!/^[a-zA-Z]+$/.test(nombre)) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "El nombre solo debe contener letras."
       });
+      return;
     }
 
-    if (!/^[a-zA-Z]+$/(apellido)) {
+    if (!/^[a-zA-Z]+$/.test(apellido)) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "El apellido solo debe contener letras."
       });
+      return;
     }
 
-    if (isNaN(numeroDocumento)) {
+    if (!/^\d+$/.test(numeroDocumento)) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "El número de documento debe ser un número válido."
       });
+      return;
     }
 
-    if (isNaN(telefono)) {
+    if (!/^\d+$/.test(telefono)) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "El teléfono debe ser un número válido."
       });
+      return;
     }
 
     if (telefono.length > 10) {
@@ -61,6 +67,7 @@ function validarDatos(nombre, apellido, numeroDocumento, telefono, correo) {
         title: "Oops...",
         text: "El teléfono no puede tener más de 10 dígitos."
       });
+      return;
     }
 
     if (!correo.includes("@")) {
@@ -69,6 +76,12 @@ function validarDatos(nombre, apellido, numeroDocumento, telefono, correo) {
         title: "Oops...",
         text: "El correo electrónico no es válido (debe incluir '@')."
       });
+      return;
     }
   }
 }
+
+document.getElementById("registrousuario").addEventListener("submit", (e) => {
+    e.preventDefault();
+    validarDatos();
+});

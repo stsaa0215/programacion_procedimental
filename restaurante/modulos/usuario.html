@@ -48,7 +48,7 @@
             Registro de Usuarios
           </h1>
 
-          <form id="registroUsuario">
+          <form id="registrousuario">
             <div class="columns">
               <div class="column">
                 <div class="field">
@@ -201,7 +201,7 @@
       </div>
     </section>
     <script>
-      document.getElementById("registroUsuario").addEventListener("submit", (e) => {
+      document.getElementById("registrousuario").addEventListener("submit", (e) => {
         e.preventDefault();
         const nombreVal = document.getElementById("nombre").value;
         const apellidoVal = document.getElementById("apellido").value;
@@ -218,6 +218,7 @@
         );
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../../js/usuario.js"></script>
   </body>
 </html>

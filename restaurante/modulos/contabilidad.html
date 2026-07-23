@@ -49,10 +49,8 @@
               <p class="subtitle mb-5">Registro de movimientos financieros</p>
 
               <div class="field mb-4">
-                <label class="label">Filtrar registros</label>
-                <div class="control">
-                  <input class="input" id="filtroContabilidad" type="text" placeholder="Buscar por concepto o venta..." />
-                </div>
+                <label class="label">Registros</label>
+                <p class="help">Los registros aparecerán aquí cuando agregues uno manualmente.</p>
               </div>
 
               <div class="table-container">
@@ -67,46 +65,13 @@
                       <th>Valor</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>V-001</td>
-                      <td>2024-05-07</td>
-                      <td class="has-text-success">+$150,000</td>
-                      <td>-</td>
-                      <td>Venta de Picada Mix</td>
-                      <td>$150,000</td>
-                    </tr>
-                    <tr>
-                      <td>-</td>
-                      <td>2024-05-06</td>
-                      <td>-</td>
-                      <td class="has-text-danger">-$50,000</td>
-                      <td>Compra de tomates</td>
-                      <td>$50,000</td>
-                    </tr>
-                    <tr>
-                      <td>V-002</td>
-                      <td>2024-05-06</td>
-                      <td class="has-text-success">+$85,000</td>
-                      <td>-</td>
-                      <td>Venta Carne de cerdo</td>
-                      <td>$85,000</td>
-                    </tr>
-                    <tr>
-                      <td>-</td>
-                      <td>2024-05-05</td>
-                      <td>-</td>
-                      <td class="has-text-danger">-$120,000</td>
-                      <td>Pago de servicios públicos</td>
-                      <td>$120,000</td>
-                    </tr>
-                  </tbody>
+                  <tbody id="tablaContabilidad"></tbody>
                 </table>
               </div>
 
               <hr />
 
-              <form id="registroFinanciero" class="mt-5">
+              <form id="guardarcontabilidad" class="mt-5">
                 <h3 class="title is-4 mb-4">Añadir Registro</h3>
                 <div class="columns">
                   <div class="column">
@@ -276,6 +241,7 @@
         }
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../../js/contabilidad.js"></script>
   </body>
 </html>
