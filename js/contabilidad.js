@@ -1,5 +1,4 @@
 function validarDatos (){
-let filtroContabilidad = document.getElementById("filtroContabilidad").value;
 let ventas = document.getElementById("ventas").value;
 let fechas = document.getElementById("fechas").value;
 let ingresos = document.getElementById("ingresos").value;
@@ -61,7 +60,7 @@ let valor = document.getElementById("valor").value;
   }
 }
 
-document.getElementById("guardarcontabilidad").addEventListener("submit", (e) => {
+document.getElementById("guardarcontabilidad1").addEventListener("submit", (e) => {
     e.preventDefault();
     validarDatos();
 });
