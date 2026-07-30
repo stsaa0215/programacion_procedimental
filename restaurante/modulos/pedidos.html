@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+    <title>Pedidos - Chechos Food</title>
+  </head>
+  <body class="has-background-black" style="min-height: 100vh;">
+    
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="../index.html"> Chechos Food </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="../index.html"> Home </a>
+          <a class="navbar-item"> Documentation </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> More </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item"> About </a>
+              <a class="navbar-item"> Jobs </a>
+              <a class="navbar-item"> Contact </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item"> Report an issue </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        <div class="box" style="max-width: 800px; margin: 0 auto; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+          <h1 class="title has-text-centered is-3 mb-2">Pedidos</h1>
+          <p class="subtitle has-text-centered mb-5">Ingresa los datos del nuevo pedido</p>
+
+          <form id="guardarpedido">
+            
+            <div class="field">
+              <label class="label">Nombre del usuario</label>
+              <div class="control">
+                <input class="input" type="text" id="nombreUsuario" placeholder="Ej. Juan Pérez">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Teléfono</label>
+              <div class="control">
+                <input class="input" type="tel" id="telefono" placeholder="Ej. 3001234567">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Dirección</label>
+              <div class="control">
+                <input class="input" type="text" id="direccion" placeholder="Ej. Calle 123 # 45-67">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Producto</label>
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select id="Producto">
+                    <option value="" disabled selected>Seleccione un producto</option>
+                    <option value="Chorizo Santarrosano">Chorizo Santarrosano</option>
+                    <option value="Chunchulla">Chunchulla</option>
+                    <option value="Picada Mix">Picada Mix</option>
+                    <option value="Carne de cerdo al barril">Carne de cerdo al barril</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Cantidad</label>
+              <div class="control">
+                <input class="input" type="number" id="cantidad" placeholder="Ej. 2" min="1">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Método de pago</label>
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select id="Método de pago">
+                    <option value="" disabled selected>Seleccione un método de pago</option>
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Tarjeta de Crédito">Tarjeta de Crédito</option>
+                    <option value="Tarjeta de Débito">Tarjeta de Débito</option>
+                    <option value="Transferencia">Transferencia</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field mt-5">
+              <div class="control">
+                <button type="submit" class="button is-link is-fullwidth is-medium">Registrar Pedido</button>
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <button type="reset" class="button is-light is-fullwidth">Limpiar</button>
+              </div>
+            </div>
+
+          </form>
+
+          <hr>
+
+          <h2 class="title is-4 has-text-centered">Pedidos Registrados</h2>
+          <div class="table-container">
+            <table class="table is-fullwidth is-striped is-hoverable">
+              <thead>
+                <tr>
+                  <th>Usuario</th>
+                  <th>Teléfono</th>
+                  <th>Dirección</th>
+                  <th>Producto</th>
+                  <th>Cantidad</th>
+                  <th>Método de Pago</th>
+                </tr>
+              </thead>
+              <tbody id="tablaPedidos">
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.getElementById('guardarpedido').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const nombreUsuario = document.getElementById('nombreUsuario').value;
+        const telefono = document.getElementById('telefono').value;
+        const direccion = document.getElementById('direccion').value;
+        const producto = document.getElementById('Producto').value;
+        const cantidad = document.getElementById('cantidad').value;
+        const metodoPago = document.getElementById('Método de pago').value;
+        
+        const tbody = document.getElementById('tablaPedidos');
+        const nuevaFila = document.createElement('tr');
+
+        nuevaFila.innerHTML = `
+          <td>${nombreUsuario}</td>
+          <td>${telefono}</td>
+          <td>${direccion}</td>
+          <td>${producto}</td>
+          <td>${cantidad}</td>
+          <td>${metodoPago}</td>
+        `;
+        
+        tbody.appendChild(nuevaFila);
+       
+        document.getElementById('guardarpedido').reset();
+        
+        document.getElementById('nombreUsuario').focus();
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../../js/pedidos.js"></script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+    <title>Quiénes Somos - Chechos Food</title>
+  </head>
+  <body class="has-background-black" style="min-height: 100vh;">
+    
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="../index.html"> Chechos Food </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="../index.html"> Home </a>
+          <a class="navbar-item"> Documentation </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> More </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="quienessomos.html"> About </a>
+              <a class="navbar-item"> Jobs </a>
+              <a class="navbar-item"> Contact </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item"> Report an issue </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="section">
+      <div class="container">
+        
+        <div class="box" style="max-width: 900px; margin: 0 auto; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+          <h1 class="title has-text-centered is-3 mb-2">Quiénes Somos</h1>
+          <p class="subtitle has-text-centered mb-5">Conoce la historia, visión y el gran objetivo de Chechos Food</p>
+
+          <div class="columns is-vcentered mb-5">
+            <div class="column is-6">
+              <h2 class="title is-4">Nuestra Historia</h2>
+              <p class="content" style="text-align: justify; line-height: 1.6;">
+                En <strong>Chechos Food</strong>, nos apasiona la comida tradicional con un toque moderno. Nacimos con el firme propósito de rescatar y enaltecer las mejores recetas típicas, utilizando ingredientes de la más alta calidad y frescura. 
+              </p>
+              <p class="content" style="text-align: justify; line-height: 1.6;">
+                Creemos que la comida no solo debe alimentar, sino también unir a las personas, evocar momentos felices y generar recuerdos imborrables. Por ello, trabajamos con esmero y dedicación en cada detalle de nuestras preparaciones.
+              </p>
+            </div>
+            <div class="column is-6">
+              <figure class="image is-4by3">
+                <img 
+                  src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=600&auto=format&fit=crop" 
+                  alt="Restaurante Chechos Food" 
+                  style="border-radius: 8px;"
+                />
+              </figure>
+            </div>
+          </div>
+
+          <hr />
+
+        
+          <div class="notification is-link is-light my-5" style="border-radius: 8px;">
+            <h2 class="title is-4 has-text-centered">Nuestro Objetivo Principal</h2>
+            <p class="subtitle is-5 has-text-centered mt-2" style="font-weight: 500; line-height: 1.5;">
+              "El gran objetivo de nuestra plataforma y equipo es **crear un menú de restaurante sumamente atractivo para los clientes**, ofreciendo una **experiencia única e inigualable** desde el momento en que exploran nuestras opciones hasta que disfrutan del platillo en su mesa."
+            </p>
+            <p class="content has-text-centered">
+              Buscamos que nuestro menú interactivo no sea solo una lista de platos, sino una carta de presentación digital cautivadora que anticipe los deliciosos sabores y la calidad que nos caracteriza.
+            </p>
+          </div>
+
+          <hr />
+
+          <h2 class="title is-4 has-text-centered mb-4">Nuestros Pilares</h2>
+          <div class="columns">
+            <div class="column is-4">
+              <div class="card" style="box-shadow: none; border: 1px solid #dbdbdb; border-radius: 8px;">
+                <div class="card-content">
+                  <p class="title is-5 has-text-centered">Experiencia Única</p>
+                  <p class="content has-text-grey" style="font-size: 0.95rem; text-align: center;">
+                    Buscamos deleitar tus sentidos con un ambiente agradable, una presentación impecable y una atención extraordinaria.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="column is-4">
+              <div class="card" style="box-shadow: none; border: 1px solid #dbdbdb; border-radius: 8px;">
+                <div class="card-content">
+                  <p class="title is-5 has-text-centered">Calidad Garantizada</p>
+                  <p class="content has-text-grey" style="font-size: 0.95rem; text-align: center;">
+                    Seleccionamos minuciosamente cada ingrediente para asegurar frescura y el sazón inconfundible en cada mordisco.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="column is-4">
+              <div class="card" style="box-shadow: none; border: 1px solid #dbdbdb; border-radius: 8px;">
+                <div class="card-content">
+                  <p class="title is-5 has-text-centered">Menú Atractivo</p>
+                  <p class="content has-text-grey" style="font-size: 0.95rem; text-align: center;">
+                    Diseñamos una presentación digital dinámica y sugerente, facilitando la elección y abriendo el apetito del comensal.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <form id="guardarinfo" class="field has-text-centered">
+            <h3 class="title is-5">Suscríbete a nuestro boletín</h3>
+            <p class="subtitle is-6 mb-3">Recibe ofertas y novedades en tu correo electrónico</p>
+            <label class="label" id="email" for="inputEmail">Correo Electrónico</label>
+            <div class="field has-addons is-justify-content-center">
+              <div class="control" style="min-width: 250px;">
+                <input class="input" type="email" placeholder="Tu correo electrónico" id="inputEmail" />
+              </div>
+              <div class="control">
+                <button class="button is-link" type="submit">Suscribirse</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../../js/quienessomos.js"></script>
+  </body>
+</html>
