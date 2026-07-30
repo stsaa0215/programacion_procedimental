@@ -9,8 +9,7 @@
     />
     <title>Chechos Food - Contabilidad</title>
   </head>
-  <body class="has-background-black" style="min-height: 100vh;">
-    
+  <body class="has-background-black" style="min-height: 100vh">
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="../index.html"> Chechos Food </a>
@@ -36,15 +35,24 @@
 
     <section class="section">
       <div class="container">
-        
         <div class="columns">
-          
-          <!-- Parte Izquierda: Tabla de Contabilidad -->
           <div class="column is-8">
-            <div class="box" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); height: 100%;">
+            <div
+              class="box"
+              style="
+                border-radius: 12px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+                height: 100%;
+              "
+            >
               <h1 class="title is-3 mb-2">Contabilidad</h1>
               <p class="subtitle mb-5">Registro de movimientos financieros</p>
-              
+
+              <div class="field mb-4">
+                <label class="label">Registros</label>
+                <p class="help">Los registros aparecerán aquí cuando agregues uno manualmente.</p>
+              </div>
+
               <div class="table-container">
                 <table class="table is-fullwidth is-striped is-hoverable">
                   <thead>
@@ -57,106 +65,185 @@
                       <th>Valor</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>V-001</td>
-                      <td>2024-05-07</td>
-                      <td class="has-text-success">+$150,000</td>
-                      <td>-</td>
-                      <td>Venta de Picada Mix</td>
-                      <td>$150,000</td>
-                    </tr>
-                    <tr>
-                      <td>-</td>
-                      <td>2024-05-06</td>
-                      <td>-</td>
-                      <td class="has-text-danger">-$50,000</td>
-                      <td>Compra de tomates</td>
-                      <td>$50,000</td>
-                    </tr>
-                    <tr>
-                      <td>V-002</td>
-                      <td>2024-05-06</td>
-                      <td class="has-text-success">+$85,000</td>
-                      <td>-</td>
-                      <td>Venta Carne de cerdo</td>
-                      <td>$85,000</td>
-                    </tr>
-                    <tr>
-                      <td>-</td>
-                      <td>2024-05-05</td>
-                      <td>-</td>
-                      <td class="has-text-danger">-$120,000</td>
-                      <td>Pago de servicios públicos</td>
-                      <td>$120,000</td>
-                    </tr>
-                  </tbody>
+                  <tbody id="tablaContabilidad"></tbody>
                 </table>
               </div>
-              
-              <div class="field mt-5">
-                <div class="control">
-                   <button class="button is-link is-medium">Añadir Registro</button>
-                </div>
-              </div>
 
+              <hr />
+
+              <input type="hidden" id="filtroContabilidad" value="" />
+
+              <form id="guardarcontabilidad" class="mt-5">
+                <h3 class="title is-4 mb-4">Añadir Registro</h3>
+                <div class="columns">
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Ventas</label>
+                      <div class="control">
+                        <input
+                          class="input"
+                          type="text"
+                          placeholder="Ej. V-003"
+                          id="ventas"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Fechas</label>
+                      <div class="control">
+                        <input
+                          class="input"
+                          type="date"
+                          id="fechas"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="columns">
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Ingresos</label>
+                      <div class="control">
+                        <input
+                          class="input"
+                          type="text"
+                          placeholder="Ej. 150000"
+                          id="ingresos"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Egresos</label>
+                      <div class="control">
+                        <input
+                          class="input"
+                          type="text"
+                          placeholder="Ej. 50000"
+                          id="egresos"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="columns">
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Concepto</label>
+                      <div class="control">
+                        <input
+                          class="input"
+                          type="text"
+                          placeholder="Ej. Compra de insumos"
+                          id="concepto"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="field">
+                      <label class="label">Valor</label>
+                      <div class="control">
+                        <input
+                          class="input"
+                          type="text"
+                          placeholder="Ej. 100000"
+                          id="valor"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="field mt-5">
+                  <div class="control">
+                    <button class="button is-link is-fullwidth is-medium" type="submit">
+                      Añadir Registro
+                    </button>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
 
-          <!-- Parte Derecha: Datos de Usuario -->
           <div class="column is-4">
-            <div class="box has-text-centered" style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); height: 100%;">
+            <div
+              class="box has-text-centered"
+              style="
+                border-radius: 12px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+                height: 100%;
+              "
+            >
               <h2 class="title is-4 mb-5">Perfil del Usuario</h2>
-              
+
               <figure class="image is-128x128 is-inline-block mb-4">
-                <img class="is-rounded" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Foto de perfil">
+                <img
+                  class="is-rounded"
+                  src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                  alt="Foto de perfil"
+                />
               </figure>
-              
+
               <h3 class="title is-3" id="displayNombre">Juan Pérez</h3>
               <p class="subtitle is-5" id="displayCargo">Administrador</p>
-              
-              <hr>
-              
-              <div class="content has-text-left">
-                <p><strong>Cédula:</strong> <span id="displayDocumento">123456789</span></p>
-                <p><strong>Teléfono:</strong> <span id="displayTelefono">3001234567</span></p>
-                <p><strong>Correo:</strong> <span id="displayCorreo">juan.perez@chechosfood.com</span></p>
-              </div>
 
+              <hr />
+
+              <div class="content has-text-left">
+                <p>
+                  <strong>Cédula:</strong>
+                  <span id="displayDocumento">123456789</span>
+                </p>
+                <p>
+                  <strong>Teléfono:</strong>
+                  <span id="displayTelefono">3001234567</span>
+                </p>
+                <p>
+                  <strong>Correo:</strong>
+                  <span id="displayCorreo">juan.perez@chechosfood.com</span>
+                </p>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
     <script>
-      // Intenta recuperar los datos guardados desde usuario.html
-      // Si usuario.html guarda los datos en localStorage, se pueden mostrar aquí.
-      document.addEventListener('DOMContentLoaded', () => {
-        const nombre = localStorage.getItem('usuario_nombre');
-        const apellido = localStorage.getItem('usuario_apellido');
-        const cargo = localStorage.getItem('usuario_cargo');
-        const documento = localStorage.getItem('usuario_documento');
-        const telefono = localStorage.getItem('usuario_telefono');
-        const correo = localStorage.getItem('usuario_correo');
+      document.addEventListener("DOMContentLoaded", () => {
+        const nombre = localStorage.getItem("usuario_nombre");
+        const apellido = localStorage.getItem("usuario_apellido");
+        const cargo = localStorage.getItem("usuario_cargo");
+        const documento = localStorage.getItem("usuario_documento");
+        const telefono = localStorage.getItem("usuario_telefono");
+        const correo = localStorage.getItem("usuario_correo");
 
-        if(nombre && apellido) {
-          document.getElementById('displayNombre').textContent = `${nombre} ${apellido}`;
+        if (nombre && apellido) {
+          document.getElementById("displayNombre").textContent =
+            `${nombre} ${apellido}`;
         }
-        if(cargo) {
-          document.getElementById('displayCargo').textContent = cargo;
+        if (cargo) {
+          document.getElementById("displayCargo").textContent = cargo;
         }
-        if(documento) {
-          document.getElementById('displayDocumento').textContent = documento;
+        if (documento) {
+          document.getElementById("displayDocumento").textContent = documento;
         }
-        if(telefono) {
-          document.getElementById('displayTelefono').textContent = telefono;
+        if (telefono) {
+          document.getElementById("displayTelefono").textContent = telefono;
         }
-        if(correo) {
-          document.getElementById('displayCorreo').textContent = correo;
+        if (correo) {
+          document.getElementById("displayCorreo").textContent = correo;
         }
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../js/contabilidad.js"></script>
   </body>
 </html>
